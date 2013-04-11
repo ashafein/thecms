@@ -1,4 +1,11 @@
 fuel/app/logs/*/*/*
 fuel/app/cache/*/*
-.idea/*
+public/files/*
 docs/*
+nbproject
+.DS_Store
+*.tmproj
+fuel/app/config/development/*
+fuel/app/cache/*
+fuel/app/logs/*/*/*
+.idea/*
