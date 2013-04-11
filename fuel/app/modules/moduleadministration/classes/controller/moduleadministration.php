@@ -18,13 +18,25 @@ class Controller_Moduleadministration extends \Controller_Administration {
 	
 
     function action_modules_save_state($strID = null, $strState = null) {
-        $module = \Model_Module::find($strID);
-        if($strState === 'true') {
-            $module->enable = 1;
-            } else {
-                $module->enable = 0;
+        if(($module = \Model_Module::find($strID)) && (($strID) != null)) {
+
+            if(($strState === 'true') && ($strState != null)) {
+                $module->enable = 1;
+                } elseif(($strState === 'false') && ($strState != null)) {
+                    $module->enable = 0;
+                } else {
+                return false;
             }
-        $module->save();
+
+            if($module->save()) {
+                return true;
+            } else {
+                return false;
+            }
+
+        } else {
+            return false;
+        }
     }
 
 }
