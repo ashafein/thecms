@@ -6,7 +6,16 @@
                                 + $(this).attr("name") +
                                 '/'
                                 + (($(this).attr("checked")) ? true : false),
-                        type: 'POST'
+                        type: 'POST',
+                        error:function(request,error)
+                        {
+                            console.log(arguments);
+                            alert ( " Can't do because: " + error );
+                        },
+                        success: function()
+                        {
+                            alert ( " Done ! " );
+                        }
                 })
         });
 
