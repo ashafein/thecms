@@ -34,7 +34,12 @@ return array(
 			'config'  => array(
 				'settings',
 			),
-			'language'  => array(),
-		),
-	
+    ),
+
+    /**
+     * Localization & internationalization settings
+     */
+    'language'           => 'en', // Default language
+    'locale'             => 'en_US', // PHP set_locale() setting, null to not set
+    'encoding'  => 'UTF-8',
 );

@@ -11,7 +11,7 @@ class Create_module
 			'name' => array('constraint' => 255, 'type' => 'varchar'),
 			'description' => array('type' => 'text'),
 			'namespace' => array('constraint' => 255, 'type' => 'varchar'),
-			'enable' => array('type' => 'bit', 'default' => false),
+			'enable' => array('type' => 'int(10)', 'default' => false),
 			'css' => array('type' => 'text', 'null' => true),
 			'js' => array('type' => 'text', 'null' => true),
 			'version' => array('constraint' => 255, 'type' => 'varchar', 'null' => true),

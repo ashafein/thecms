@@ -19,6 +19,10 @@ return array(
 			array(
 				0 => '001_module_info',
 			),
+			'modulehanding' => 
+			array(
+				0 => '001_module_info',
+			),
 		),
 		'package' => 
 		array(

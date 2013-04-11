@@ -46,14 +46,5 @@ class Model_Module extends Model
 		return $val;
 	}
 	
-	public static function as_array() 
-	{
-		$result = array();
-		$pages = self::find('all');
-		foreach ($pages as $page) {
-			$result[$page->id] = $page->name;
-		}
-		return $result;
-	}
 
 }
