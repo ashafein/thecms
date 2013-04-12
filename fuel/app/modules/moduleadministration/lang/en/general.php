@@ -13,8 +13,8 @@ return array(
     ),
 
     'messages' => array(
-        'successfully_enabled'  => 'Module was successfully enabled',
-        'successfully_disabled' => 'Module was successfully disabled',
-        'error' => 'Module state wasn\'t changed'
+        'successfully_enabled'  => "Module ':name' was successfully enabled",
+        'successfully_disabled' => "Module ':name' was successfully disabled",
+        'error'                 => "Module state wasn't changed"
     )
 );

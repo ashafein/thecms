@@ -18,25 +18,24 @@ class Controller_Moduleadministration extends \Controller_Administration {
 	
 
     function action_modules_save_state($strID = null, $strState = null) {
-        if(($module = \Model_Module::find($strID)) && (($strID) != null)) {
+        $msg = "";
+        if(($strID != null) && ($strState != null) && ($module = \Model_Module::find($strID))) {
 
-            if(($strState === 'true') && ($strState != null)) {
+            if($strState === 'true') {
                 $module->enable = 1;
-                } elseif(($strState === 'false') && ($strState != null)) {
-                    $module->enable = 0;
+                $msg = __('moduleadm.messages.successfully_enabled', array('name' => $module->name));
                 } else {
-                return false;
-            }
+                    $module->enable = 0;
+                    $msg = __('moduleadm.messages.successfully_disabled', array('name' => $module->name));
+                }
 
             if($module->save()) {
-                return true;
-            } else {
-                return false;
+                return \Fuel\Core\Response::forge($msg, 200);
             }
-
-        } else {
-            return false;
         }
+
+        return \Fuel\Core\Response::forge( __('moduleadm.messages.error'), 200);
+
     }
 
 }
